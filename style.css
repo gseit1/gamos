@@ -57,6 +57,8 @@ section {
     justify-content: center;
     text-align: center;
     color: white;
+    width: 100%;
+    overflow: hidden; /* Prevent horizontal scroll from long titles or animations */
 }
 
 .hero-overlay {
@@ -488,8 +490,25 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .hero-content {
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .hero-content h1 {
-        font-size: 4rem;
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+    
+    .pre-title {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+    
+    .date {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
     }
     
     h2 {
@@ -498,13 +517,14 @@ footer {
     
     section {
         padding: 4rem 1.5rem;
+        overflow-x: hidden;
     }
     
     .detail-box {
         padding: 2rem;
     }
     
-    .rsvp-form {
+    .rsvp-form, .quiz-form {
         padding: 2rem 1.5rem;
     }
 }
