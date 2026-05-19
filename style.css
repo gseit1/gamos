@@ -490,6 +490,10 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Disable parallax on mobile to prevent lag */
+    }
+
     .hero-content {
         padding: 1rem;
         width: 100%;
