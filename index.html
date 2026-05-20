@@ -145,9 +145,7 @@
         <h2 data-aos="fade-up">Mini Quiz!</h2>
         <p class="rsvp-subtitle" data-aos="fade-up" data-aos-delay="100">Ας παίξουμε ένα παιχνίδι πριν τη μεγάλη μέρα!</p>
         
-        <!-- Form configured to use Brevo Forms -->
-        <!-- Replace YOUR_BREVO_FORM_URL with the form URL from your Brevo account -->
-        <form action="YOUR_BREVO_FORM_URL_QUIZ" method="POST" class="rsvp-form quiz-form" data-aos="fade-up" data-aos-delay="200">
+        <form action="/.netlify/functions/send-email" method="POST" class="rsvp-form quiz-form" data-aos="fade-up" data-aos-delay="200">
             <div class="form-group">
                 <label for="q1">1. Περίγραψε τον Γιώργο με μία μόνο λέξη:</label>
                 <input type="text" id="q1" name="Q1_WORD" placeholder="Γράψτε τον τίτλο..." required>
@@ -183,9 +181,7 @@
         <h2 data-aos="fade-up">RSVP - Επιβεβαίωση</h2>
         <p class="rsvp-subtitle" data-aos="fade-up" data-aos-delay="100">Παρακαλούμε επιβεβαιώστε την παρουσία σας μέχρι τη 20η Ιουνίου.</p>
         
-        <!-- Form configured to use Brevo -->
-        <!-- Replace YOUR_BREVO_FORM_URL with the form URL from your Brevo account -->
-        <form action="https://1dd8978e.sibforms.com/serve/MUIFAOKxqje0ZX5D2ROvP_r4u3uIl5m5JU7dKxG6xnikWPCcvaRKxDbJqf0ke1D88X_D_kqkD8C7dVs1_LZxJdDFqVS8FK23QTD8uJ1vBlcrO4xcrSCQemYYB_ZDSOxAgc4B7YILpPt9t4-Uqud7Hc1Oc-ffZ3JQMTTUpdMO5jTWNuc2TUV9DrKNTS1B3iyWF31ksx8KD0LAMB9mTQ==" method="POST" class="rsvp-form" data-aos="fade-up" data-aos-delay="200">
+        <form action="/.netlify/functions/send-email" method="POST" class="rsvp-form" data-aos="fade-up" data-aos-delay="200">
             <div class="form-group">
                 <label for="name">Ονοματεπώνυμο</label>
                 <!-- For Brevo, ensure the 'name' attributes match your Contact Attributes -->
@@ -234,7 +230,14 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Scripts -->
-    <script>
+    <script>        // Check for success message in URL (from form submissions)
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.search.includes('success=true')) {
+                alert('Ευχαριστούμε πολύ! Η φόρμα υποβλήθηκε με επιτυχία 🎉');
+                // Remove ?success=true from the URL so it doesn't alert on refresh
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
         // Init Animate On Scroll
         AOS.init({
             once: true,
