@@ -13,7 +13,7 @@ exports.handler = async (event) => {
         const apiKey = process.env.BREVO_API_KEY; 
         
         // 4. ΕΔΩ ΒΑΛΤΕ ΤΟ ΠΡΟΣΩΠΙΚΟ ΣΑΣ EMAIL (Που θα λαμβάνετε τις ειδοποιήσεις)
-        const YOUR_PERSONAL_EMAIL = "giorgosseitar@gmail.com"; // Αλλάξτε το με το πραγματικό σας
+        const YOUR_PERSONAL_EMAIL = "geospan2011@hotmail.com"; // Αλλάξτε το με το πραγματικό σας
 
         let subject = "";
         let htmlContent = "";
