@@ -13,7 +13,7 @@ exports.handler = async (event) => {
         const apiKey = process.env.BREVO_API_KEY; 
         
         // 4. ΕΔΩ ΒΑΛΤΕ ΤΟ ΠΡΟΣΩΠΙΚΟ ΣΑΣ EMAIL (Που θα λαμβάνετε τις ειδοποιήσεις)
-        const YOUR_PERSONAL_EMAIL = "gseit1@example.com"; // Αλλάξτε το με το πραγματικό σας
+        const YOUR_PERSONAL_EMAIL = "giorgosseitar@gmail.com"; // Αλλάξτε το με το πραγματικό σας
 
         let subject = "";
         let htmlContent = "";
@@ -46,8 +46,8 @@ exports.handler = async (event) => {
         // 5. Προετοιμασία των δεδομένων για το Brevo API
         const payload = {
             sender: { 
-                name: "Γάμος - Ειδοποιήσεις", 
-                email: "noreply@gamos.gr" // Το Brevo συνήθως δέχεται οποιοδήποτε email εδώ, αρκεί να στέλνετε σε εσάς
+                name: "giorgos", 
+                email: "giorgosseitar@gmail.com" // Το Brevo συνήθως δέχεται οποιοδήποτε email εδώ, αρκεί να στέλνετε σε εσάς
             },
             to: [{ 
                 email: YOUR_PERSONAL_EMAIL,
