@@ -36,19 +36,21 @@
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
             <p class="pre-title">Παντρευόμαστε!</p>
             <h1>Νεκταρία και Γιώργος</h1>
+            <svg class="floral-element" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" style="color: #fff; opacity: 0.9; max-width: 40px; margin: 1rem auto;">
+                <path d="M12 22v-9" />
+                <path d="M12 13c-2.5-3-6-3-6-3s0 3.5 3.5 5.5" />
+                <path d="M12 13c2.5-3 6-3 6-3s0 3.5-3.5 5.5" />
+                <path d="M12 8c-2-2.5-5-2.5-5-2.5s0 3 3 5" />
+                <path d="M12 8c2-2.5 5-2.5 5-2.5s0 3-3 5" />
+                <path d="M12 3c-1.5-2-3.5-2-3.5-2s0 2.5 2.5 4" />
+                <path d="M12 3c1.5-2 3.5-2 3.5-2s0 2.5-2.5 4" />
+            </svg>
             <p class="date">Κυριακή 5 Ιουλίου ώρα 19:00</p>
-        </div>
-        <div class="scroll-indicator" onclick="document.getElementById('details').scrollIntoView({behavior: 'smooth'})">
-            <span>Scroll</span>
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
         </div>
     </header>
 
     <!-- Details Section -->
     <section class="details" id="details">
-        <h2 data-aos="fade-up">Η Πρόσκληση</h2>
         
         <div class="prosklitirio-wrapper" data-aos="fade-up" data-aos-delay="100">
             <img src="images/prosklitirio.jpg" alt="Προσκλητήριο Γάμου" class="prosklitirio-image">
@@ -59,31 +61,33 @@
         </div>
 
         <div class="details-container">
-            <div class="detail-box" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon">⛪</div>
+            <div class="detail-column" data-aos="fade-up" data-aos-delay="300">
+                <span class="eyebrow">Ποτε & Που</span>
                 <h3>Το Μυστήριο</h3>
-                <p><strong>Κυριακή 5 Ιουλίου, ώρα 19:00</strong></p>
-                <p>Ιερός Ναός Αγίων Αποστόλων, Κορινού</p>
+                <p class="highlight-text">Κυριακή 5 Ιουλίου</p>
+                <p class="time">Ώρα 19:00</p>
+                <div class="separator-small"></div>
+                <p style="color: var(--text-light); font-weight: 300;">Ιερός Ναός Αγίων Αποστόλων<br>Κορινός</p>
             </div>
             
-            <div class="detail-box" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon">💍</div>
+            <div class="detail-column" data-aos="fade-up" data-aos-delay="400">
+                <span class="eyebrow">Οικογενεια</span>
                 <h3>Τα Πρόσωπα</h3>
                 <p class="role-title">Οι Γονείς:</p>
-                <p>Γιώργος & Ασημίνα Πούλιου<br>Αθανάσιος Σπανός & Μαρία Σεϊταρίδου</p>
-                <p class="role-title" style="margin-top: 1.5rem;">Οι Κουμπάροι:</p>
-                <p>Χάρης Γεωργιάδης<br>Ευαγγελία Λαζαρίδου</p>
+                <p style="color: var(--text-light); font-weight: 300;">Γιώργος & Ασημίνα Πούλιου<br>Αθανάσιος Σπανός & Μαρία Σεϊταρίδου</p>
+                <div class="separator-small"></div>
+                <p class="role-title">Οι Κουμπάροι:</p>
+                <p style="color: var(--text-light); font-weight: 300;">Χάρης Γεωργιάδης<br>Ευαγγελία Λαζαρίδου</p>
             </div>
 
-            <div class="detail-box" data-aos="fade-up" data-aos-delay="600">
-                <div class="icon">🥂</div>
+            <div class="detail-column" data-aos="fade-up" data-aos-delay="500">
+                <span class="eyebrow">Πριν τον γαμο</span>
                 <h3>Οι Ευχές</h3>
-                <p class="role-title" style="margin-bottom: 0.8rem;">Τις ευχές σας θα δεχτούμε:</p>
-                <p><strong>Οικογένεια Γαμπρού</strong></p>
-                <p>Κυριακή 28.06 & Δευτέρα 29.06</p>
-                
-                <p style="margin-top: 1rem;"><strong>Οικογένεια Νύφης</strong></p>
-                <p>Δευτέρα 29.06 & Τρίτη 30.06</p>
+                <p class="role-title">Οικογένεια Γαμπρού</p>
+                <p style="color: var(--text-light); font-weight: 300;">Κυριακή 28.06 & Δευτέρα 29.06</p>
+                <div class="separator-small"></div>
+                <p class="role-title">Οικογένεια Νύφης</p>
+                <p style="color: var(--text-light); font-weight: 300;">Δευτέρα 29.06 & Τρίτη 30.06</p>
             </div>
         </div>
     </section>
@@ -91,6 +95,15 @@
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
         <div data-aos="fade-up">
+            <svg class="floral-element" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22v-9" />
+                <path d="M12 13c-2.5-3-6-3-6-3s0 3.5 3.5 5.5" />
+                <path d="M12 13c2.5-3 6-3 6-3s0 3.5-3.5 5.5" />
+                <path d="M12 8c-2-2.5-5-2.5-5-2.5s0 3 3 5" />
+                <path d="M12 8c2-2.5 5-2.5 5-2.5s0 3-3 5" />
+                <path d="M12 3c-1.5-2-3.5-2-3.5-2s0 2.5 2.5 4" />
+                <path d="M12 3c1.5-2 3.5-2 3.5-2s0 2.5-2.5 4" />
+            </svg>
             <h2>Η Ιστορία Μας...</h2>
         </div>
         
@@ -142,6 +155,15 @@
 
     <!-- Quiz Section -->
     <section class="rsvp quiz-section" id="quiz">
+        <svg class="floral-element" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" data-aos="fade-up">
+            <path d="M12 22v-9" />
+            <path d="M12 13c-2.5-3-6-3-6-3s0 3.5 3.5 5.5" />
+            <path d="M12 13c2.5-3 6-3 6-3s0 3.5-3.5 5.5" />
+            <path d="M12 8c-2-2.5-5-2.5-5-2.5s0 3 3 5" />
+            <path d="M12 8c2-2.5 5-2.5 5-2.5s0 3-3 5" />
+            <path d="M12 3c-1.5-2-3.5-2-3.5-2s0 2.5 2.5 4" />
+            <path d="M12 3c1.5-2 3.5-2 3.5-2s0 2.5-2.5 4" />
+        </svg>
         <h2 data-aos="fade-up">Mini Quiz!</h2>
         <p class="rsvp-subtitle" data-aos="fade-up" data-aos-delay="100">Ας παίξουμε ένα παιχνίδι πριν τη μεγάλη μέρα!</p>
         
@@ -178,6 +200,15 @@
 
     <!-- RSVP Section -->
     <section class="rsvp" id="rsvp">
+        <svg class="floral-element" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" data-aos="fade-up">
+            <path d="M12 22v-9" />
+            <path d="M12 13c-2.5-3-6-3-6-3s0 3.5 3.5 5.5" />
+            <path d="M12 13c2.5-3 6-3 6-3s0 3.5-3.5 5.5" />
+            <path d="M12 8c-2-2.5-5-2.5-5-2.5s0 3 3 5" />
+            <path d="M12 8c2-2.5 5-2.5 5-2.5s0 3-3 5" />
+            <path d="M12 3c-1.5-2-3.5-2-3.5-2s0 2.5 2.5 4" />
+            <path d="M12 3c1.5-2 3.5-2 3.5-2s0 2.5-2.5 4" />
+        </svg>
         <h2 data-aos="fade-up">RSVP - Επιβεβαίωση</h2>
         <p class="rsvp-subtitle" data-aos="fade-up" data-aos-delay="100">Παρακαλούμε επιβεβαιώστε την παρουσία σας μέχρι τη 20η Ιουνίου.</p>
         
@@ -218,7 +249,15 @@
 
     <footer data-aos="fade-in" data-aos-duration="1500">
         <p>Ανυπομονούμε να γιορτάσουμε μαζί σας!</p>
-        <div class="footer-icon">✨</div>
+        <svg class="floral-element-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22v-9" />
+            <path d="M12 13c-2.5-3-6-3-6-3s0 3.5 3.5 5.5" />
+            <path d="M12 13c2.5-3 6-3 6-3s0 3.5-3.5 5.5" />
+            <path d="M12 8c-2-2.5-5-2.5-5-2.5s0 3 3 5" />
+            <path d="M12 8c2-2.5 5-2.5 5-2.5s0 3-3 5" />
+            <path d="M12 3c-1.5-2-3.5-2-3.5-2s0 2.5 2.5 4" />
+            <path d="M12 3c1.5-2 3.5-2 3.5-2s0 2.5-2.5 4" />
+        </svg>
     </footer>
 
     <!-- Floating RSVP Button -->
