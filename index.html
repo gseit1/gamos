@@ -145,31 +145,33 @@
         <h2 data-aos="fade-up">Mini Quiz!</h2>
         <p class="rsvp-subtitle" data-aos="fade-up" data-aos-delay="100">Ας παίξουμε ένα παιχνίδι πριν τη μεγάλη μέρα!</p>
         
-        <form action="https://formspree.io/f/mzdwegdl" method="POST" class="rsvp-form quiz-form" data-aos="fade-up" data-aos-delay="200">
+        <!-- Form configured to use Brevo Forms -->
+        <!-- Replace YOUR_BREVO_FORM_URL with the form URL from your Brevo account -->
+        <form action="YOUR_BREVO_FORM_URL_QUIZ" method="POST" class="rsvp-form quiz-form" data-aos="fade-up" data-aos-delay="200">
             <div class="form-group">
                 <label for="q1">1. Περίγραψε τον Γιώργο με μία μόνο λέξη:</label>
-                <input type="text" id="q1" name="q1_song" placeholder="Γράψτε τον τίτλο..." required>
+                <input type="text" id="q1" name="Q1_WORD" placeholder="Γράψτε τον τίτλο..." required>
             </div>
             
             <div class="form-group">
                 <label for="q2">2. Περίγραψε τη Νεκταρία με μία μόνο λέξη:</label>
-                <input type="text" id="q2" name="q2_giorgos" placeholder="Η λέξη σας..." required>
+                <input type="text" id="q2" name="Q2_WORD" placeholder="Η λέξη σας..." required>
             </div>
             
             <div class="form-group">
                 <label for="q3">3. Αν ο Γιώργος και η Νεκταρία ήταν τραγούδι, ποιο θα ήταν;</label>
-                <input type="text" id="q3" name="q3_nektaria" placeholder="Η λέξη σας..." required>
+                <input type="text" id="q3" name="Q3_SONG" placeholder="Η λέξη σας..." required>
             </div>
 
             <div class="form-group">
                 <label for="q4">4. Πρόβλεψη τραγουδιού εισόδου στον γάμο μας!<br>
                 <small style="color: var(--text-light); font-weight: 400; text-transform: none; letter-spacing: 0;">(Ο νικητής ή οι νικητές θα έχουν έπαθλο! 🎁)</small></label>
-                <input type="text" id="q4" name="q4_entrance" placeholder="Μάντεψε το τραγούδι..." required>
+                <input type="text" id="q4" name="Q4_ENTRANCE" placeholder="Μάντεψε το τραγούδι..." required>
             </div>
             
             <div class="form-group">
                 <label for="quiz_name">Το Όνομά σου</label>
-                <input type="text" id="quiz_name" name="quiz_name" placeholder="Ποιος απαντάει; (για το έπαθλο!)" required>
+                <input type="text" id="quiz_name" name="QUIZ_NAME" placeholder="Ποιος απαντάει; (για το έπαθλο!)" required>
             </div>
             
             <button type="submit" class="submit-btn">Υποβολή Απαντήσεων</button>
@@ -181,22 +183,23 @@
         <h2 data-aos="fade-up">RSVP - Επιβεβαίωση</h2>
         <p class="rsvp-subtitle" data-aos="fade-up" data-aos-delay="100">Παρακαλούμε επιβεβαιώστε την παρουσία σας μέχρι τη 20η Ιουνίου.</p>
         
-        <!-- Form configured to use Formspree for FREE email sending -->
-        <!-- Replace YOUR_FORM_ID_HERE with the ID you get from Formspree -->
-        <form action="https://formspree.io/f/xaqkejqa" method="POST" class="rsvp-form" data-aos="fade-up" data-aos-delay="200">
+        <!-- Form configured to use Brevo -->
+        <!-- Replace YOUR_BREVO_FORM_URL with the form URL from your Brevo account -->
+        <form action="https://1dd8978e.sibforms.com/serve/MUIFAOKxqje0ZX5D2ROvP_r4u3uIl5m5JU7dKxG6xnikWPCcvaRKxDbJqf0ke1D88X_D_kqkD8C7dVs1_LZxJdDFqVS8FK23QTD8uJ1vBlcrO4xcrSCQemYYB_ZDSOxAgc4B7YILpPt9t4-Uqud7Hc1Oc-ffZ3JQMTTUpdMO5jTWNuc2TUV9DrKNTS1B3iyWF31ksx8KD0LAMB9mTQ==" method="POST" class="rsvp-form" data-aos="fade-up" data-aos-delay="200">
             <div class="form-group">
                 <label for="name">Ονοματεπώνυμο</label>
-                <input type="text" id="name" name="name" placeholder="π.χ. Γιάννης & Μαρία" required>
+                <!-- For Brevo, ensure the 'name' attributes match your Contact Attributes -->
+                <input type="text" id="name" name="LASTNAME" placeholder="π.χ. Γιάννης & Μαρία" required>
             </div>
             
             <div class="form-group">
                 <label for="email">Διεύθυνση Email</label>
-                <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                <input type="email" id="email" name="EMAIL" placeholder="email@example.com" required>
             </div>
             
             <div class="form-group">
                 <label for="attendance">Θα παρευρεθείτε;</label>
-                <select id="attendance" name="attendance" required>
+                <select id="attendance" name="ATTENDANCE" required>
                     <option value="" disabled selected>Επιλέξτε...</option>
                     <option value="Μετά χαράς">Θα παρευρεθούμε με χαρά!</option>
                     <option value="Δυστυχώς όχι">Δυστυχώς δεν θα τα καταφέρουμε</option>
@@ -205,12 +208,12 @@
             
             <div class="form-group">
                 <label for="guests">Αριθμός Ατόμων</label>
-                <input type="number" id="guests" name="guests" min="1" max="5" value="1" required>
+                <input type="number" id="guests" name="GUESTS" min="1" max="5" value="1" required>
             </div>
 
             <div class="form-group">
                 <label for="message">Ευχές για το ζευγάρι (Προαιρετικό)</label>
-                <textarea id="message" name="message" rows="4" placeholder="Ανυπομονούμε..."></textarea>
+                <textarea id="message" name="MESSAGE" rows="4" placeholder="Ανυπομονούμε..."></textarea>
             </div>
             
             <button type="submit" class="submit-btn">Αποστολή</button>
