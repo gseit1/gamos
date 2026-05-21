@@ -57,7 +57,7 @@ exports.handler = async (event) => {
             htmlContent: htmlContent
         };
 
-        // 6. Στέλνουμε το αίτημα στο Brevo
+        // 6. Στέλνουμε το αίτημα στο Brevo για το Email
         const response = await fetch("https://api.brevo.com/v3/smtp/email", {
             method: "POST",
             headers: {
@@ -70,8 +70,46 @@ exports.handler = async (event) => {
 
         if (!response.ok) {
             const errorText = await response.text();
-            console.error("Brevo API Error:", errorText);
+            console.error("Brevo Email API Error:", errorText);
             throw new Error('Failed to send email through Brevo');
+        }
+
+        // 6.5 ΑΠΟΘΗΚΕΥΣΗ ΣΤΙΣ ΕΠΑΦΕΣ ΤΟΥ BREVO (CRM / Contacts)
+        // Το Brevo απαιτεί ένα email για να σώσει την επαφή. 
+        // Αν είναι το RSVP, έχουμε το κανονικό email. Αν είναι το Quiz, δημιουργούμε ένα "εικονικό".
+        const contactEmail = formData.EMAIL || `quiz_${Date.now()}@gamos.local`;
+        const contactName = formData.LASTNAME || formData.QUIZ_NAME || "Άγνωστος";
+
+        const contactPayload = {
+            email: contactEmail,
+            attributes: {
+                FIRSTNAME: contactName,
+                // Πεδία RSVP
+                ATTENDANCE: formData.ATTENDANCE || "-",
+                GUESTS: formData.GUESTS || "-",
+                MESSAGE: formData.MESSAGE || "-",
+                // Πεδία Quiz
+                QUIZ_Q1: formData.Q1_WORD || "-",
+                QUIZ_Q2: formData.Q2_WORD || "-",
+                QUIZ_Q3: formData.Q3_SONG || "-",
+                QUIZ_Q4: formData.Q4_ENTRANCE || "-"
+            },
+            updateEnabled: true
+        };
+
+        try {
+            await fetch("https://api.brevo.com/v3/contacts", {
+                method: "POST",
+                headers: {
+                    "accept": "application/json",
+                    "api-key": apiKey,
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(contactPayload)
+            });
+        } catch (err) {
+            console.error("Failed to save contact to Brevo:", err);
+            // Δεν μπλοκάρουμε τη διαδικασία αν αποτύχει η αποθήκευση της επαφής
         }
 
         // 7. Αν πετύχει, ανακατευθύνουμε τον χρήστη πίσω στο site με ένα ?success=true στο link
